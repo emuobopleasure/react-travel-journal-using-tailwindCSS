@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
 
 function App() {
+
+  
+  const [theme, setTheme] = useState(true) 
+  
+  
+  const handleToggle = () => {
+    setTheme(prevTheme => !prevTheme)
+    localStorage.setItem("colorTheme", JSON.stringify(!theme) )
+  
+  }
+  
+  useEffect(() => {
+  let getTheme = localStorage.getItem("colorTheme") === null? theme: JSON.parse(localStorage.getItem("colorTheme"))
+  console.log('getheme',getTheme)
+
+    setTheme(getTheme)
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app mx-auto">
+      <Header
+        theme={theme}
+        handleToggle={handleToggle}
+      />
+      <Main
+        theme={theme}
+      />
     </div>
   );
 }
