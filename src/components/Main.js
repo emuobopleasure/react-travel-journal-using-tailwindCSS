@@ -10,6 +10,7 @@ const Main = ({theme}) => {
         {
             journals.map((journal) => (
                 <Card
+                    key={journal.id}
                     item={journal}
                     theme={theme}
                 />

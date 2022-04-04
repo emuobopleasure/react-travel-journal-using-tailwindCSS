@@ -20,7 +20,7 @@ function App() {
   console.log('getheme',getTheme)
 
     setTheme(getTheme)
-  }, [])
+  }, [setTheme])
 
   return (
     <div className="app mx-auto">
