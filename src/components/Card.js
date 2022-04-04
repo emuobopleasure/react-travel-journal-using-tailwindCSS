@@ -5,13 +5,13 @@ const Card = ({item, theme}) => {
   return (
     <div className='card-wrapper'>
         <div className='card flex mx-auto gap-4 sm:gap-8 max-w-none min-w-fit md:max-w-xl p-1 rounded shadow-gray-300 shadow-sm hover:shadow-gray-600 hover:shadow-lg'>
-            <img src={item.image_url}
+            <img src={item.image_url} alt='location image'
                 className='card-img md:basis-[40%] w-[100px] h-[150px] sm:w-[150px] sm:h-[200px] rounded my-auto'
             />
             <div className='card-details flex flex-col gap-2 md:basis-[60%]'>
                 <div className='location-row flex items-center gap-4'>
                     <div className='flex items-center gap-2'>
-                        <img src="images/location.png"/>
+                        <img src="images/location.png" alt='location logo' />
                         <p className='location text-[11px] sm:text-[11px] font-[400]'>
                             {item.location}
                         </p>
