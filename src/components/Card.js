@@ -5,7 +5,7 @@ const Card = ({item, theme}) => {
   return (
     <div className='card-wrapper'>
         <div className='card flex mx-auto gap-4 sm:gap-8 max-w-none min-w-fit md:max-w-xl p-1 rounded shadow-gray-300 shadow-sm hover:shadow-gray-600 hover:shadow-lg'>
-            <img src={item.image_url} alt='location image'
+            <img src={item.image_url} alt='location'
                 className='card-img md:basis-[40%] w-[100px] h-[150px] sm:w-[150px] sm:h-[200px] rounded my-auto'
             />
             <div className='card-details flex flex-col gap-2 md:basis-[60%]'>
